@@ -1,2 +1,3 @@
 # SOPDFReader
-Custom PDF Reader for iOS
+
+A description of this package.
