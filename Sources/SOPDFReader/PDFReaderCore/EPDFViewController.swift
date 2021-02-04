@@ -13,13 +13,13 @@ import UIKit
 class EPDFViewController: UIViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource, UIScrollViewDelegate {
 
     // MARK: - Property
-    private var pdfDocumentController: EPDFDocumentController!
+    var pdfDocumentController: EPDFDocumentController!
     private var hasCoverPage = false
     private var layoutMargin = EPDFLayoutMargin.zero
     private var backgroundColor = UIColor.lightGray
-
+    var delegate: PDFViewControllerDelegate?
     private weak var scrollView: UIScrollView!
-    private weak var pageViewController: UIPageViewController!
+    weak var pageViewController: UIPageViewController!
     private weak var pageViewWidthConstraint: NSLayoutConstraint!
     private weak var pageViewHeightConstraint: NSLayoutConstraint!
     private weak var pageViewLeadingConstraint: NSLayoutConstraint!
@@ -273,6 +273,12 @@ class EPDFViewController: UIViewController, UIPageViewControllerDelegate, UIPage
             $0.isEnabled = isEnabled
         }
     }
+    
+    func setViewController(page: Int) {
+//        let controller = self.pdfDocumentController.pageViewController(at: page)!
+//        self.pageViewController.setViewControllers([controller], direction: .forward, animated: true, completion: nil)
+    }
+    
 
     // MARK: - Page View Controller Data Source
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -284,6 +290,7 @@ class EPDFViewController: UIViewController, UIPageViewControllerDelegate, UIPage
         // Return Previous PDF Page View Controller
         if let pageNumber = (viewController as! EPDFPageViewController).pageNumber {
             if let previousViewController = self.pdfDocumentController.pageViewController(at: pageNumber - 1) {
+                delegate?.currentPage(page: pageNumber - 1)
                 previousViewController.alignment = .center
                 if pageViewController.viewControllers?.count == 2 {
                     if (self.hasCoverPage && pageNumber % 2 == 0) || (!self.hasCoverPage && pageNumber % 2 == 1) {
@@ -312,6 +319,7 @@ class EPDFViewController: UIViewController, UIPageViewControllerDelegate, UIPage
         // Return Next PDF Page View Controller
         if let pageNumber = (viewController as! EPDFPageViewController).pageNumber {
             if let nextViewController = self.pdfDocumentController.pageViewController(at: pageNumber + 1) {
+                delegate?.currentPage(page: pageNumber + 1)
                 nextViewController.alignment = .center
                 if pageViewController.viewControllers?.count == 2 {
                     if (self.hasCoverPage && pageNumber % 2 == 0) || (!self.hasCoverPage && pageNumber % 2 == 1) {
@@ -429,3 +437,6 @@ class EPDFViewController: UIViewController, UIPageViewControllerDelegate, UIPage
 
 }
 
+protocol PDFViewControllerDelegate: class {
+    func currentPage(page: Int?)
+}
