@@ -106,4 +106,4 @@ class ViewController: UIViewController {
 Sinan Özman, sinanozman@icloud.com
 
 ## License
-Instagram-clone-swiftUI is available under the MIT License, see LICENSE for more information.
+SOPDFReader is available under the MIT License, see LICENSE for more information.
