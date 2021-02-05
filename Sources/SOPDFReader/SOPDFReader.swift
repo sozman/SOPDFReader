@@ -70,7 +70,7 @@ class SOPDFReaderController: UIViewController {
         }
         pageLabel.textAlignment = .center
         let totalPage = pdfController?.pdfDocumentController.numberOfPages
-        pageLabel.text = "Reading 1 / \(totalPage ?? 0)"
+        pageLabel.text = "1 / \(totalPage ?? 0)"
     }
     
     private func setupSlider() {
@@ -96,7 +96,7 @@ class SOPDFReaderController: UIViewController {
 extension SOPDFReaderController: PDFViewControllerDelegate {
     func currentPage(page: Int?) {
         let totalPage = pdfController?.pdfDocumentController.numberOfPages
-        pageLabel.text = "Reading \(page ?? 0) / \(totalPage ?? 0)"
+        pageLabel.text = "\(page ?? 0) / \(totalPage ?? 0)"
         self.pageSlider.setValue(Float(page ?? 0), animated: true)
     }
 }
