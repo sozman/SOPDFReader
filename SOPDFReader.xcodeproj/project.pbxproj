@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -29,7 +29,6 @@
 		6CC90FE625CAABE100F26D60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CC90FE425CAABE100F26D60 /* LaunchScreen.storyboard */; };
 		6CC90FF125CAABE900F26D60 /* SOPDFReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SOPDFReader::SOPDFReader::Product" /* SOPDFReader.framework */; };
 		6CC90FF225CAABE900F26D60 /* SOPDFReader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "SOPDFReader::SOPDFReader::Product" /* SOPDFReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6CC90FFC25CAAD2500F26D60 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6CC90FFB25CAAD2500F26D60 /* SnapKit */; };
 		OBJ_37 /* CGPDFPage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* CGPDFPage+Extension.swift */; };
 		OBJ_38 /* CGSize+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* CGSize+Extension.swift */; };
 		OBJ_39 /* EPDFDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* EPDFDocumentController.swift */; };
@@ -130,7 +129,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				6CC90FFC25CAAD2500F26D60 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +218,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -232,7 +230,6 @@
 				OBJ_31 /* README.md */,
 				6CC90FF025CAABE900F26D60 /* Frameworks */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -289,7 +286,6 @@
 			);
 			name = SOPDFReader;
 			packageProductDependencies = (
-				6CC90FFB25CAAD2500F26D60 /* SnapKit */,
 			);
 			productName = SOPDFReader;
 			productReference = "SOPDFReader::SOPDFReader::Product" /* SOPDFReader.framework */;
@@ -338,6 +334,8 @@
 				TargetAttributes = {
 					6CC90FD625CAABDE00F26D60 = {
 						CreatedOnToolsVersion = 12.4;
+						DevelopmentTeam = YSX96QB4A2;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -349,9 +347,8 @@
 				en,
 				Base,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			packageReferences = (
-				6CC90FFA25CAAD2500F26D60 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = OBJ_27 /* Products */;
 			projectDirPath = "";
@@ -527,10 +524,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinanozman.Example;
@@ -591,10 +585,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinanozman.Example;
@@ -645,10 +636,7 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SOPDFReader.xcodeproj/SOPDFReader_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -677,10 +665,7 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SOPDFReader.xcodeproj/SOPDFReader_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -716,8 +701,7 @@
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -764,11 +748,7 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SOPDFReader.xcodeproj/SOPDFReaderTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@loader_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -793,11 +773,7 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SOPDFReader.xcodeproj/SOPDFReaderTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@loader_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -868,25 +844,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6CC90FFA25CAAD2500F26D60 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		6CC90FFB25CAAD2500F26D60 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6CC90FFA25CAAD2500F26D60 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = OBJ_1 /* Project object */;
 }
