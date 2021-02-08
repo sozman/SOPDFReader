@@ -216,11 +216,11 @@ class EPDFViewController: UIViewController, UIPageViewControllerDelegate, UIPage
     // MARK: - Gesture Recognizer
     @objc func handleOneFingerSingleTap(sender: UIGestureRecognizer) {
         // Hide or Show Navigation Controller
-        if sender.state == .ended {
-            if let navigationController = self.navigationController {
-                navigationController.setNavigationBarHidden(!navigationController.isNavigationBarHidden, animated: true)
-            }
-        }
+//        if sender.state == .ended {
+//            if let navigationController = self.navigationController {
+//                navigationController.setNavigationBarHidden(!navigationController.isNavigationBarHidden, animated: true)
+//            }
+//        }
     }
 
     @objc func handleOneFingerDoubleTap(sender: UIGestureRecognizer) {
@@ -251,11 +251,11 @@ class EPDFViewController: UIViewController, UIPageViewControllerDelegate, UIPage
 
     // MARK: - Utility
     private func hideNavigationBarIfRequired() {
-        if let navigationController = self.navigationController {
-            if !navigationController.isNavigationBarHidden {
-                navigationController.setNavigationBarHidden(true, animated: true)
-            }
-        }
+//        if let navigationController = self.navigationController {
+//            if !navigationController.isNavigationBarHidden {
+//                navigationController.setNavigationBarHidden(true, animated: true)
+//            }
+//        }
     }
 
     // MARK: - Scroll View Delegate
